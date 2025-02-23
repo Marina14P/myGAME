@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Вопросик к тебе </title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('frame.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        .question-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #no {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="question-box">
+        <h1>Любишь меня?</h1>
+        <div class="buttons">
+            <button id="yes">Да</button>
+            <button id="no">Нет</button>
+        </div>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('no');
+
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.clientWidth);
+            const y = Math.random() * (window.innerHeight - noButton.clientHeight);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+
+        document.getElementById('yes').addEventListener('click', () => {
+            alert('Я и не сомневалась =) Я тоже тебя люблю! ❤️');
+        });
+
+    </script>
+</body>
+
+</html>
